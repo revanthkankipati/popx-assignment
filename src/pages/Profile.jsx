@@ -20,67 +20,36 @@ function Profile() {
   return (
     <div className="app-frame">
       <div className="signup-page">
-        <h2
-          style={{
-            fontSize: 24,
-            fontWeight: 700,
-            color: "#1d2226",
-            marginTop: 24,
-          }}
-        >
-          Account Settings
-        </h2>
-
-        <div
-          style={{
-            display: "flex",
-            gap: 16,
-            marginTop: 24,
-          }}
-        >
-          <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: "50%",
-              background: "#6c25ff",
-              color: "white",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 24,
-              fontWeight: 600,
-              flexShrink: 0,
-            }}
-          >
-            {initials}
-          </div>
-
-          <div>
-            <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1d2226" }}>
-              {user.fullName || "N/A"}
-            </h3>
-            <p style={{ fontSize: 14, color: "#7b7b7b", marginTop: 2 }}>
-              {user.email || "N/A"}
-            </p>
-          </div>
+        <div className="profile-header">
+          <h2>Account Settings</h2>
         </div>
 
-        <p
-          style={{
-            fontSize: 14,
-            color: "#7b7b7b",
-            lineHeight: 1.5,
-            marginTop: 20,
-          }}
-        >
-          Computer Science student passionate about web development and building
-          responsive applications using React.
-        </p>
+        <div className="profile-content">
+          <div className="profile-info">
+            <div className="avatar-wrapper">
+              <div className="avatar">{initials}</div>
+              <div className="camera-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z"/>
+                  <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 className="profile-name">{user.fullName || "N/A"}</h3>
+              <p className="profile-email">{user.email || "N/A"}</p>
+            </div>
+          </div>
 
-        <div className="profile-divider" style={{ marginTop: 20, marginBottom: 20 }}></div>
+          <p className="profile-description">
+            Computer Science student passionate about web development, React
+            applications, backend development, and continuous learning.
+          </p>
 
-        <div className="profile-divider" style={{ marginTop: "auto" }}></div>
+          <div className="profile-divider" style={{ marginTop: 24 }}></div>
+
+          <div className="profile-divider" style={{ marginTop: "auto" }}></div>
+        </div>
       </div>
     </div>
   );
