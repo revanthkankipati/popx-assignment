@@ -78,7 +78,9 @@ function Profile() {
           responsive applications using React.
         </p>
 
-        <div className="profile-divider"></div>
+        <div className="profile-divider" style={{ marginTop: 20, marginBottom: 20 }}></div>
+
+        <div className="profile-divider" style={{ marginTop: "auto" }}></div>
       </div>
     </div>
   );
