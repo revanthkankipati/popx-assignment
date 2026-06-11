@@ -169,3 +169,11 @@ body {
   background: #cbcbcb !important;
   pointer-events: none;
 }
+
+.input-error {
+  display: block;
+  color: red;
+  font-size: 11px;
+  margin-top: 4px;
+  font-weight: 400;
+}

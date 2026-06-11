@@ -1,4 +1,4 @@
-function FloatingInput({ label, required, type, placeholder, value, onChange }) {
+function FloatingInput({ label, required, type, placeholder, value, onChange, error }) {
   return (
     <div className="input-group">
       <label>
@@ -11,6 +11,7 @@ function FloatingInput({ label, required, type, placeholder, value, onChange }) 
         value={value}
         onChange={onChange}
       />
+      {error && <span className="input-error">{error}</span>}
     </div>
   );
 }
