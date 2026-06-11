@@ -90,7 +90,7 @@ function Profile() {
 
           <div className="profile-divider"></div>
 
-          <div className="profile-divider" style={{ marginTop: "auto" }}></div>
+          <div className="profile-bottom-divider"></div>
         </div>
       </div>
     </div>
