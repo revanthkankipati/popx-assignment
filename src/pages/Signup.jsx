@@ -1,41 +1,48 @@
 function Signup() {
   return (
-    <div className="mobile-container">
-      <h1>Create your PopX account</h1>
+    <div className="app-frame">
+      <div className="signup-page">
+        <h1 className="signup-title">Create your<br />PopX account</h1>
 
-      <label>Full Name</label>
-      <input type="text" />
+        <div className="input-group">
+          <label>Full Name*</label>
+          <input type="text" placeholder="Marry Doe" />
+        </div>
 
-      <label>Phone Number</label>
-      <input type="text" />
+        <div className="input-group">
+          <label>Phone Number*</label>
+          <input type="text" placeholder="+1234567890" />
+        </div>
 
-      <label>Email Address</label>
-      <input type="email" />
+        <div className="input-group">
+          <label>Email Address*</label>
+          <input type="email" placeholder="marry@example.com" />
+        </div>
 
-      <label>Password</label>
-      <input type="password" />
+        <div className="input-group">
+          <label>Password*</label>
+          <input type="password" placeholder="********" />
+        </div>
 
-      <label>Company Name</label>
-      <input type="text" />
+        <div className="input-group">
+          <label>Company Name</label>
+          <input type="text" placeholder="Acme Inc" />
+        </div>
 
-      <div style={{ marginTop: "10px" }}>
-        <p>Are you an Agency?</p>
+        <div className="agency-section">
+          <p>Are you an Agency?*</p>
+          <div className="radio-group">
+            <label>
+              <input type="radio" name="agency" /> Yes
+            </label>
+            <label>
+              <input type="radio" name="agency" /> No
+            </label>
+          </div>
+        </div>
 
-        <label>
-          <input type="radio" name="agency" /> Yes
-        </label>
-
-        <label style={{ marginLeft: "20px" }}>
-          <input type="radio" name="agency" /> No
-        </label>
+        <button className="primary-btn create-btn">Create Account</button>
       </div>
-
-      <button
-        className="primary-btn"
-        style={{ marginTop: "20px" }}
-      >
-        Create Account
-      </button>
     </div>
   );
 }

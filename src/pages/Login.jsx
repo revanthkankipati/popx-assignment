@@ -1,19 +1,26 @@
 function Login() {
   return (
-    <div className="mobile-container">
-      <h1>Signin to your PopX account</h1>
+    <div className="app-frame">
+      <div className="login-page">
+        <h1 className="login-title">Signin to your<br />PopX account</h1>
 
-      <p style={{ margin: "10px 0" }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
+        <p className="login-subtitle">
+          Lorem ipsum dolor sit amet,<br />
+          consectetur adipiscing elit.
+        </p>
 
-      <label>Email Address</label>
-      <input type="email" placeholder="Enter email address" />
+        <div className="input-group">
+          <label>Email Address*</label>
+          <input type="email" placeholder="marry@example.com" />
+        </div>
 
-      <label>Password</label>
-      <input type="password" placeholder="Enter password" />
+        <div className="input-group">
+          <label>Password*</label>
+          <input type="password" placeholder="********" />
+        </div>
 
-      <button className="primary-btn">Login</button>
+        <button className="primary-btn create-btn">Login</button>
+      </div>
     </div>
   );
 }
