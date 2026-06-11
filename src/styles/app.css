@@ -18,7 +18,7 @@ body {
   margin: 40px auto;
   background: #f8f8f8;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
 
@@ -190,35 +190,35 @@ body {
 .profile-info {
   display: flex;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 4px;
 }
 
 .avatar-wrapper {
   position: relative;
-  width: 72px;
-  height: 72px;
+  width: 58px;
+  height: 58px;
   flex-shrink: 0;
 }
 
 .avatar {
-  width: 72px;
-  height: 72px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: #6c25ff;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 600;
 }
 
 .camera-badge {
   position: absolute;
   bottom: 0;
-  right: -2px;
-  width: 26px;
-  height: 26px;
+  right: -1px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: #6c25ff;
   border: 2px solid #fff;
@@ -231,7 +231,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   color: #1d2226;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .profile-email {
@@ -241,16 +241,17 @@ body {
 }
 
 .profile-description {
-  max-width: 260px;
+  max-width: 290px;
   font-size: 13px;
   color: #444;
   line-height: 1.5;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .profile-divider {
   width: 100%;
-  border-top: 1px dashed #dcdcdc;
+  border-top: 1px dashed #e5e5e5;
+  margin-top: 18px;
 }
 
 .btn-disabled {
