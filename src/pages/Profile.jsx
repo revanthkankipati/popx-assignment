@@ -77,6 +77,8 @@ function Profile() {
           Computer Science student passionate about web development and building
           responsive applications using React.
         </p>
+
+        <div className="profile-divider"></div>
       </div>
     </div>
   );
