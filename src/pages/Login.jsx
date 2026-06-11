@@ -77,7 +77,7 @@ function Login() {
           />
 
           <Button
-            className={`create-btn ${!canLogin ? "btn-disabled" : ""}`}
+            className={`login-btn ${!canLogin ? "btn-disabled" : ""}`}
             onClick={handleLogin}
           >
             Login

@@ -165,6 +165,10 @@ body {
   margin-top: auto;
 }
 
+.login-btn {
+  margin-top: 40px;
+}
+
 .profile-header {
   margin: 0 -20px;
   padding: 16px 16px;
