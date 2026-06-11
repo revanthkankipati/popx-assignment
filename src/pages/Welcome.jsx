@@ -4,24 +4,21 @@ function Welcome() {
   const navigate = useNavigate();
 
   return (
-    <div className="app-frame">
+    <div className="app-frame" style={{ display: "flex", flexDirection: "column" }}>
       <div
         style={{
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          padding: "0 20px 24px",
+          marginTop: "auto",
+          padding: "0 20px 32px",
         }}
       >
-        <h1 style={{ fontSize: 28, fontWeight: 700, color: "#1d2226" }}>
+        <h1 style={{ fontSize: 28, fontWeight: 600, color: "#1d2226" }}>
           Welcome to PopX
         </h1>
 
         <p
           style={{
             fontSize: 18,
-            color: "#7b7b7b",
+            color: "#6b7280",
             lineHeight: 1.5,
             marginTop: 12,
           }}
