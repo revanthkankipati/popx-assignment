@@ -1,25 +1,48 @@
+import { useNavigate } from "react-router-dom";
+import FloatingInput from "../components/FloatingInput";
+import Button from "../components/Button";
+
 function Login() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/profile");
+  };
+
   return (
     <div className="app-frame">
-      <div className="login-page">
-        <h1 className="login-title">Signin to your<br />PopX account</h1>
+      <div className="signup-page">
+        <h1 className="login-title">
+          Signin to your
+          <br />
+          PopX account
+        </h1>
 
         <p className="login-subtitle">
-          Lorem ipsum dolor sit amet,<br />
+          Lorem ipsum dolor sit amet,
+          <br />
           consectetur adipiscing elit.
         </p>
 
-        <div className="input-group">
-          <label>Email Address*</label>
-          <input type="email" placeholder="marry@example.com" />
-        </div>
+        <div className="form-body">
+          <FloatingInput
+            label="Email Address"
+            required
+            type="email"
+            placeholder="marry@example.com"
+          />
 
-        <div className="input-group">
-          <label>Password*</label>
-          <input type="password" placeholder="********" />
-        </div>
+          <FloatingInput
+            label="Password"
+            required
+            type="password"
+            placeholder="********"
+          />
 
-        <button className="primary-btn create-btn">Login</button>
+          <Button className="create-btn" onClick={handleLogin}>
+            Login
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -1,30 +1,92 @@
+import { useState, useEffect } from "react";
+
 function Profile() {
-  return (
-    <div className="mobile-container">
-      <h2>Account Settings</h2>
+  const [user, setUser] = useState(null);
 
-      <div
-        style={{
-          display: "flex",
-          gap: "10px",
-          marginTop: "20px",
-        }}
-      >
-        <img
-          src="https://via.placeholder.com/70"
-          alt="profile"
-          style={{ borderRadius: "50%" }}
-        />
+  useEffect(() => {
+    const data = localStorage.getItem("popx_user");
+    if (data) {
+      setUser(JSON.parse(data));
+    }
+  }, []);
 
-        <div>
-          <h4>Mary Doe</h4>
-          <p>mary@example.com</p>
-        </div>
+  if (!user) {
+    return (
+      <div className="app-frame" style={{ padding: "24px 20px" }}>
+        <h2 style={{ fontSize: 24, fontWeight: 700, color: "#1d2226" }}>
+          Account Settings
+        </h2>
+        <p style={{ marginTop: 20, color: "#7b7b7b" }}>No user data found.</p>
       </div>
+    );
+  }
 
-      <p style={{ marginTop: "20px" }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
+  return (
+    <div className="app-frame">
+      <div className="signup-page">
+        <h2
+          style={{
+            fontSize: 24,
+            fontWeight: 700,
+            color: "#1d2226",
+            marginTop: 24,
+          }}
+        >
+          Account Settings
+        </h2>
+
+        <div
+          style={{
+            display: "flex",
+            gap: 16,
+            marginTop: 24,
+          }}
+        >
+          <div
+            style={{
+              width: 64,
+              height: 64,
+              borderRadius: "50%",
+              background: "#6c25ff",
+              color: "white",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 24,
+              fontWeight: 600,
+              flexShrink: 0,
+            }}
+          >
+            {user.fullName
+              ? user.fullName
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")
+              : "?"}
+          </div>
+
+          <div>
+            <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1d2226" }}>
+              {user.fullName || "N/A"}
+            </h3>
+            <p style={{ fontSize: 14, color: "#7b7b7b", marginTop: 2 }}>
+              {user.email || "N/A"}
+            </p>
+          </div>
+        </div>
+
+        <p
+          style={{
+            fontSize: 14,
+            color: "#7b7b7b",
+            lineHeight: 1.5,
+            marginTop: 20,
+          }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
     </div>
   );
 }

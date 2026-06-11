@@ -1,49 +1,113 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import PhoneFrame from "../components/PhoneFrame";
+import FloatingInput from "../components/FloatingInput";
+import Button from "../components/Button";
+
 function Signup() {
+  const navigate = useNavigate();
+  const [form, setForm] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    password: "",
+    company: "",
+    isAgency: "",
+  });
+
+  const handleChange = (field) => (e) => {
+    setForm({ ...form, [field]: e.target.value });
+  };
+
+  const handleSubmit = () => {
+    localStorage.setItem("popx_user", JSON.stringify(form));
+    navigate("/profile");
+  };
+
   return (
-    <div className="app-frame">
-      <div className="signup-page">
-        <h1 className="signup-title">Create your<br />PopX account</h1>
+    <PhoneFrame>
+      <h1 className="signup-title">
+        Create your
+        <br />
+        PopX account
+      </h1>
 
-        <div className="input-group">
-          <label>Full Name*</label>
-          <input type="text" placeholder="Marry Doe" />
-        </div>
+      <div className="form-body">
+        <FloatingInput
+          label="Full Name"
+          required
+          placeholder="Marry Doe"
+          value={form.fullName}
+          onChange={handleChange("fullName")}
+        />
 
-        <div className="input-group">
-          <label>Phone Number*</label>
-          <input type="text" placeholder="+1234567890" />
-        </div>
+        <FloatingInput
+          label="Phone number"
+          required
+          type="text"
+          placeholder="+1234567890"
+          value={form.phone}
+          onChange={handleChange("phone")}
+        />
 
-        <div className="input-group">
-          <label>Email Address*</label>
-          <input type="email" placeholder="marry@example.com" />
-        </div>
+        <FloatingInput
+          label="Email address"
+          required
+          type="email"
+          placeholder="marry@example.com"
+          value={form.email}
+          onChange={handleChange("email")}
+        />
 
-        <div className="input-group">
-          <label>Password*</label>
-          <input type="password" placeholder="********" />
-        </div>
+        <FloatingInput
+          label="Password"
+          required
+          type="password"
+          placeholder="********"
+          value={form.password}
+          onChange={handleChange("password")}
+        />
 
-        <div className="input-group">
-          <label>Company Name</label>
-          <input type="text" placeholder="Acme Inc" />
-        </div>
+        <FloatingInput
+          label="Company name"
+          placeholder="Acme Inc"
+          value={form.company}
+          onChange={handleChange("company")}
+        />
 
         <div className="agency-section">
-          <p>Are you an Agency?*</p>
+          <p>
+            Are you an Agency?<span className="required">*</span>
+          </p>
           <div className="radio-group">
             <label>
-              <input type="radio" name="agency" /> Yes
+              <input
+                type="radio"
+                name="agency"
+                value="yes"
+                checked={form.isAgency === "yes"}
+                onChange={handleChange("isAgency")}
+              />{" "}
+              Yes
             </label>
             <label>
-              <input type="radio" name="agency" /> No
+              <input
+                type="radio"
+                name="agency"
+                value="no"
+                checked={form.isAgency === "no"}
+                onChange={handleChange("isAgency")}
+              />{" "}
+              No
             </label>
           </div>
         </div>
 
-        <button className="primary-btn create-btn">Create Account</button>
+        <Button className="create-btn" onClick={handleSubmit}>
+          Create Account
+        </Button>
       </div>
-    </div>
+    </PhoneFrame>
   );
 }
 
