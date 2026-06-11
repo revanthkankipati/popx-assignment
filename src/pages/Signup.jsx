@@ -20,7 +20,7 @@ function Signup() {
   };
 
   const handleSubmit = () => {
-    localStorage.setItem("popx_user", JSON.stringify(form));
+    localStorage.setItem("user", JSON.stringify(form));
     navigate("/profile");
   };
 

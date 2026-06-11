@@ -1,14 +1,6 @@
-import { useState, useEffect } from "react";
-
 function Profile() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const data = localStorage.getItem("popx_user");
-    if (data) {
-      setUser(JSON.parse(data));
-    }
-  }, []);
+  const raw = localStorage.getItem("user");
+  const user = raw ? JSON.parse(raw) : null;
 
   if (!user) {
     return (
@@ -20,6 +12,10 @@ function Profile() {
       </div>
     );
   }
+
+  const initials = user.fullName
+    ? user.fullName.split(" ").map((n) => n[0]).join("")
+    : "?";
 
   return (
     <div className="app-frame">
@@ -57,12 +53,7 @@ function Profile() {
               flexShrink: 0,
             }}
           >
-            {user.fullName
-              ? user.fullName
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")
-              : "?"}
+            {initials}
           </div>
 
           <div>
@@ -83,8 +74,8 @@ function Profile() {
             marginTop: 20,
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Computer Science student passionate about web development and building
+          responsive applications using React.
         </p>
       </div>
     </div>
