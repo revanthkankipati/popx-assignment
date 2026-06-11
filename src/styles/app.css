@@ -8,15 +8,15 @@
 }
 
 body {
-  background: #f7f8f9;
+  background: #f1f1f1;
 }
 
 .app-frame,
 .mobile-container {
   width: 375px;
-  height: 812px;
+  min-height: 812px;
   margin: 40px auto;
-  background: #f7f8f9;
+  background: #f8f8f8;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -49,7 +49,7 @@ body {
 .signup-page {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
   padding: 0 20px 24px;
 }
 
@@ -167,9 +167,12 @@ body {
 
 .profile-header {
   margin: 0 -20px;
-  padding: 18px 20px;
+  padding: 16px 16px;
   border-bottom: 1px solid #e5e5e5;
   background: #fff;
+  height: 56px;
+  display: flex;
+  align-items: center;
 }
 
 .profile-header h2 {
@@ -186,7 +189,7 @@ body {
 
 .profile-info {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   margin-top: 24px;
 }
 
@@ -225,8 +228,8 @@ body {
 }
 
 .profile-name {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   color: #1d2226;
   margin-top: 10px;
 }
@@ -239,15 +242,15 @@ body {
 
 .profile-description {
   max-width: 260px;
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-  margin-top: 24px;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.5;
+  margin-top: 20px;
 }
 
 .profile-divider {
   width: 100%;
-  border-top: 1px dashed #e5e5e5;
+  border-top: 1px dashed #dcdcdc;
 }
 
 .btn-disabled {
