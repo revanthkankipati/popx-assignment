@@ -74,8 +74,8 @@ body {
 }
 
 .login-subtitle {
-  font-size: 16px;
-  color: #7b7b7b;
+  font-size: 18px;
+  color: #7a7a7a;
   line-height: 1.4;
   margin-bottom: 24px;
 }
@@ -163,4 +163,9 @@ body {
 
 .create-btn {
   margin-top: auto;
+}
+
+.btn-disabled {
+  background: #cbcbcb !important;
+  pointer-events: none;
 }

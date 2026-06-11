@@ -8,6 +8,8 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const isValid = email.trim() && password.trim();
+
   const handleLogin = () => {
     const raw = localStorage.getItem("user");
     if (!raw) {
@@ -42,7 +44,7 @@ function Login() {
             label="Email Address"
             required
             type="email"
-            placeholder="marry@example.com"
+            placeholder="Enter email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -51,12 +53,15 @@ function Login() {
             label="Password"
             required
             type="password"
-            placeholder="********"
+            placeholder="Enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <Button className="create-btn" onClick={handleLogin}>
+          <Button
+            className={`create-btn ${!isValid ? "btn-disabled" : ""}`}
+            onClick={handleLogin}
+          >
             Login
           </Button>
         </div>
